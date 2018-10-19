@@ -1,0 +1,41 @@
+version: "3"
+services:
+  bitcoind:
+    image: nicolasdorier/docker-bitcoin:0.16.0
+    container_name: bitcoind
+    environment:
+      BITCOIN_EXTRA_ARGS: |
+        testnet=0
+        whitelist=0.0.0.0/0
+        server=1
+        rpcuser=rpcuser
+        rpcpassword=rpcpass
+    expose:
+      - "8333"
+    ports:
+      - "0.0.0.0:8333:8333"
+    volumes:
+      - "/scratch/bitcoin/mainnet/bitcoind:/data"
+  clightning_bitcoin:
+    image: elementsproject/lightningd
+    container_name: lightning
+    command:
+      - --bitcoin-rpcconnect=bitcoind
+      - --bitcoin-rpcuser=rpcuser
+      - --bitcoin-rpcpassword=rpcpass
+      - --network=bitcoin
+      - --alias=<%= node_alias %>
+      - --rgb=FF4500
+      - --log-level=debug
+      - --announce-addr=<%= local_ip %>:9735
+    environment:
+      EXPOSE_TCP: "true"
+    expose:
+      - "9735"
+    ports:
+      - "0.0.0.0:9735:9735"
+    volumes:
+      - "/scratch/bitcoin/mainnet/clightning:/root/.lightning"
+      - "/scratch/bitcoin/mainnet/bitcoind:/etc/bitcoin"
+    links:
+      - bitcoind

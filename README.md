@@ -4,7 +4,7 @@ Gilani's Thunder
 The code for my personal Lightening node. To use, run:
 
 ```
-curl https://github.com/amingilani/thunder/blob/master/remote.sh | sh
+curl https://raw.githubusercontent.com/amingilani/thunder/master/remote.sh | sh
 ```
 
 Thanks:

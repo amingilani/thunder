@@ -15,7 +15,7 @@ services:
     ports:
       - "0.0.0.0:8333:8333"
     volumes:
-      - "/scratch/bitcoin/mainnet/bitcoind:/data"
+      - "/mnt/lightning-data/bitcoin/mainnet/bitcoind:/data"
   clightning_bitcoin:
     image: elementsproject/lightningd
     container_name: lightning
@@ -35,7 +35,7 @@ services:
     ports:
       - "0.0.0.0:9735:9735"
     volumes:
-      - "/scratch/bitcoin/mainnet/clightning:/root/.lightning"
-      - "/scratch/bitcoin/mainnet/bitcoind:/etc/bitcoin"
+      - "/mnt/lightning-data/bitcoin/mainnet/clightning:/root/.lightning"
+      - "/mnt/lightning-data/bitcoin/mainnet/bitcoind:/etc/bitcoin"
     links:
       - bitcoind

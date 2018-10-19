@@ -11,7 +11,10 @@ echo "Downloading Gilani's Thunder"
 git clone https://github.com/amingilani/thunder
 cd thunder
 
-tmux new-session -d './run.sh'
+echo "Setting up data volume"
+./setup_volume.sh
+
+tmux new-session -d './run_node.sh'
 
 echo 'Tmux session now running, run `tmux a` to connect.'
 

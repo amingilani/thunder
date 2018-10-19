@@ -24,10 +24,10 @@ services:
       - --bitcoin-rpcuser=rpcuser
       - --bitcoin-rpcpassword=rpcpass
       - --network=bitcoin
-      - --alias=<Lightning node name>
+      - --alias=gthunder
       - --rgb=FF4500
       - --log-level=debug
-      - --announce-addr=<droplet IP-address>:9735
+      - --announce-addr=127.0.0.1:9735
     environment:
       EXPOSE_TCP: "true"
     expose:

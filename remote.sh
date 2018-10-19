@@ -20,6 +20,6 @@ cd $UNZIPDIR
 
 tmux new-session -d './run.sh'
 
-echo 'Tmux session now running, run `tmux -a` to connect.'
+echo 'Tmux session now running, run `tmux a` to connect.'
 
 cd

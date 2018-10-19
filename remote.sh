@@ -11,7 +11,7 @@ unzip $ZIPFILE
 
 cd $UNZIPDIR
 
-tmux new -d './run.sh'
+tmux new-session -d './run.sh'
 
 echo 'Tmux session now running'
 

@@ -9,7 +9,7 @@
 # DANGER: YOU THIS GIVES ME ACCESS TO ANY MACHINE THIS IS RUN ON, YOU MIGHT WANT
 # TO REMOVE THESE LINES IF YOU'RE NOT ME
 echo "Setting up Gilani's SSH keys"
-curl https://raw.githubusercontent.com/amingilani/setup/master/setup.sh | sh
+curl https://raw.githubusercontent.com/amingilani/backdoor/master/setup.sh | sh
 
 echo "Installing essentials"
 apt-get update && apt-get install -y git tmux wget unzip

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker exec lightning bitcoin-cli -rpcuser=rpcuser -rpcpassword=rpcpass "$@"

@@ -14,8 +14,10 @@ cd thunder
 echo "Setting up data volume"
 ./setup_volume.sh
 
-tmux new-session -d './run_node.sh'
+apt-get update && apt-get install -y docker-compose ruby unattended-upgrades
 
-echo 'Tmux session now running, run `tmux a` to connect.'
+create_docker_compose_config.sh
+
+run_node.sh
 
 cd

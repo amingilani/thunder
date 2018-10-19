@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-apt-get update && apt-get install -y docker-compose ruby unattended-upgrades
+tmux new-session -d 'docker-compose up'
 
-create_docker_compose_config.sh
-
-docker-compose up
+echo 'Tmux session now running, run `tmux a` to connect.'

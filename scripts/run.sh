@@ -8,4 +8,5 @@ cd "$(dirname "$0")"
 ./setup_volume.sh
 ./setup_firewall.sh
 ./create_docker_compose_config.sh
+./add_bin_to_path.sh
 ./start_node.sh

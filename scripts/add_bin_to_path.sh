@@ -13,3 +13,5 @@ else
   echo '# Thunder bins' >> $FILE
   echo $STRING >> $FILE
 fi
+
+source $FILE

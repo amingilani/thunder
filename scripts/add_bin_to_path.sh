@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-"$(dirname "$0")"
+cd "$(dirname "$0")"
 
 FILE="$HOME/.bashrc"
 DIR="$(realpath ../bin)"
